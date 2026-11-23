@@ -3,6 +3,7 @@
   --text: #1d2330;
   --muted: #5d6677;
   --link: #1a5fd0;
+  --line: #dde1e8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -11,6 +12,7 @@
     --text: #e6e9ef;
     --muted: #9aa3b3;
     --link: #7fb0ff;
+    --line: #2c3240;
   }
 }
 
@@ -31,4 +33,28 @@ h1 { font-size: 1.8em; line-height: 1.25; margin: 0 0 4px; }
 h2 { font-size: 1.15em; margin: 32px 0 8px; }
 .meta { color: var(--muted); margin: 0 0 24px; }
 a { color: var(--link); }
-ul { padding-left: 1.3em; }
+h3 { font-size: 1em; margin: 20px 0 6px; }
+ul, ol { padding-left: 1.3em; }
+li { margin-bottom: 4px; }
+
+.toc {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 4px 16px;
+  margin: 24px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+td:first-child { width: 30%; font-weight: 600; }
