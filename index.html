@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lipendis Studios</title>
+<meta name="description" content="Lipendis Studios is an independent studio making bright, punchy mobile games: Antillery, Gear Crush and Bread Factory.">
+<meta name="theme-color" content="#2fa8ff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lipendis Studios">
+<meta property="og:description" content="Small studio. Big little worlds. Bright, punchy mobile games for Android and iPhone.">
+<meta property="og:image" content="https://lipendis.github.io/assets/img/og-image.jpg">
+<meta property="og:url" content="https://lipendis.github.io/">
+<style>
+@font-face { font-family: Lilita; src: url(assets/fonts/lilita-one.woff2) format('woff2'); font-display: swap; }
+@font-face { font-family: Quicksand; src: url(assets/fonts/quicksand.woff2) format('woff2'); font-weight: 300 700; font-display: swap; }
+
+:root {
+  --ink: #1b1530;
+  --sky1: #2fa8ff;
+  --sky2: #8fd8ff;
+  --gold1: #ffd84a;
+  --gold2: #ff9d1c;
+  --navy: #1d2350;
+  --cream: #fff6e6;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font: 600 18px/1.55 Quicksand, sans-serif; color: var(--ink); background: var(--cream); }
+a { color: inherit; }
+img { display: block; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+.display {
+  font-family: Lilita, sans-serif; font-weight: 400; letter-spacing: 0.5px; color: #fff;
+  -webkit-text-stroke: 0.14em var(--ink); paint-order: stroke fill;
+  text-shadow: 0 0.09em 0 var(--ink);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block; font-family: Lilita; font-size: 22px; letter-spacing: 0.5px; color: #fff; text-decoration: none;
+  padding: 12px 26px 14px; border-radius: 18px; border: 3px solid var(--ink);
+  background: linear-gradient(180deg, var(--gold1), var(--gold2));
+  box-shadow: inset 0 4px 0 rgba(255,255,255,0.55), inset 0 -6px 0 rgba(170,70,0,0.45), 0 6px 0 var(--ink);
+  -webkit-text-stroke: 4px var(--ink); paint-order: stroke fill;
+  transition: transform 0.12s;
+}
+a.btn:hover { transform: translateY(-3px) scale(1.03); }
+a.btn:active { transform: translateY(3px); box-shadow: inset 0 4px 0 rgba(255,255,255,0.55), inset 0 -4px 0 rgba(170,70,0,0.45), 0 2px 0 var(--ink); }
+.btn.blue { background: linear-gradient(180deg, #6fd0ff, #2b86e8); box-shadow: inset 0 4px 0 rgba(255,255,255,0.5), inset 0 -6px 0 rgba(10,50,140,0.45), 0 6px 0 var(--ink); }
+.btn.green { background: linear-gradient(180deg, #8be55a, #3fae2e); box-shadow: inset 0 4px 0 rgba(255,255,255,0.5), inset 0 -6px 0 rgba(20,90,10,0.45), 0 6px 0 var(--ink); }
+.btn.white { background: linear-gradient(180deg, #ffffff, #dfe6f2); color: var(--ink); -webkit-text-stroke: 0; box-shadow: inset 0 -6px 0 rgba(40,60,110,0.18), 0 6px 0 var(--ink); }
+.btn.soon { opacity: 0.55; filter: grayscale(0.5); cursor: default; }
+.btns { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+
+/* Hero */
+.hero {
+  position: relative; overflow: hidden; padding: 28px 0 150px;
+  background:
+    repeating-conic-gradient(from 0deg at 70% 55%, rgba(255,255,255,0.13) 0 6deg, transparent 6deg 18deg),
+    radial-gradient(circle at 70% 55%, #c9efff 0, transparent 45%),
+    linear-gradient(180deg, var(--sky1), var(--sky2));
+}
+nav { display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 3; }
+.brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; }
+.brand .display { font-size: 38px; }
+.brand small { font-family: Lilita; font-size: 18px; color: var(--ink); opacity: 0.75; letter-spacing: 3px; }
+.navlinks { display: flex; gap: 26px; }
+.navlinks a { text-decoration: none; font-weight: 700; color: #fff; text-shadow: 0 2px 0 rgba(0,0,0,0.25); }
+.navlinks a:hover { text-decoration: underline; }
+
+.hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 20px; margin-top: 40px; position: relative; z-index: 2; }
+.hero h1 { font-size: clamp(48px, 7vw, 96px); line-height: 0.98; margin: 0 0 22px; }
+.hero p.lead { font-size: 22px; color: #0c2a4a; max-width: 520px; margin: 0 0 32px; }
+.hero-art { height: 520px; }
+.hero-ant { position: absolute; right: 0; bottom: 0; width: 560px; transform: scaleX(-1); z-index: 1; }
+.wave { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 120px; z-index: 2; }
+
+/* Games */
+.games { padding: 40px 0 100px; }
+.ribbon { text-align: center; margin: 0 0 40px; }
+.ribbon span {
+  display: inline-block; font-family: Lilita; font-size: 30px; color: #fff; padding: 10px 46px 12px;
+  background: linear-gradient(180deg, #ff6b6b, #d8323f); border: 3px solid var(--ink); border-radius: 12px;
+  -webkit-text-stroke: 5px var(--ink); paint-order: stroke fill; box-shadow: 0 6px 0 var(--ink);
+  transform: rotate(-2deg);
+}
+
+.card { border: 4px solid var(--ink); border-radius: 32px; box-shadow: 0 12px 0 var(--ink); overflow: hidden; }
+.badge {
+  display: inline-block; font-family: Lilita; font-size: 16px; letter-spacing: 1px; color: #fff; padding: 4px 14px 5px;
+  border: 3px solid var(--ink); border-radius: 999px; -webkit-text-stroke: 3px var(--ink); paint-order: stroke fill;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 24px; padding: 0; list-style: none; }
+.chips li { border-radius: 999px; padding: 6px 16px; font-size: 15px; font-weight: 700; }
+.shots { display: flex; gap: 12px; margin: 0 0 26px; }
+.shots img { width: calc((100% - 24px) / 3); border-radius: 14px; border: 3px solid var(--ink); }
+
+/* Antillery: the featured, newest game */
+.antillery { display: grid; grid-template-columns: 1.15fr 1fr; background: #fff; }
+.antillery .art { background: url(assets/img/antillery-feature-raw.webp) center / cover; min-height: 460px; }
+.antillery .body { padding: 34px 40px 40px; background: linear-gradient(180deg, #fff, #fff3dc); }
+.antillery .badge { background: linear-gradient(180deg, #ff6b6b, #d8323f); }
+.antillery .logo { width: 330px; max-width: 100%; margin: 12px 0 10px -8px; }
+.antillery p { margin: 0 0 20px; }
+.antillery .chips li { background: var(--navy); color: #fff; }
+.antillery-shots { display: flex; gap: 22px; justify-content: center; margin: 60px 0 80px; }
+.antillery-shots img { width: 210px; border-radius: 26px; border: 4px solid var(--ink); box-shadow: 0 8px 0 var(--ink); background: #000; }
+.antillery-shots img:nth-child(odd) { transform: rotate(-3deg) translateY(10px); }
+.antillery-shots img:nth-child(even) { transform: rotate(3deg); }
+
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
+.pair .card { display: flex; flex-direction: column; }
+.pair .body { flex: 1; display: flex; flex-direction: column; }
+.pair .btns { margin-top: auto; }
+
+/* Gear Crush: a sunny garage in blue and orange */
+.gear { background: linear-gradient(180deg, #2f86ee, #1b4fae); color: #eaf3ff; }
+.gear .head { height: 250px; background: url(assets/img/gearcrush-header.webp) center bottom / cover; border-bottom: 4px solid var(--ink); }
+.gear .body { padding: 26px 32px 34px; }
+.gear .tag { font-family: Lilita; font-size: 18px; color: #ffd36b; letter-spacing: 0.5px; margin: 0 0 14px; }
+.gear p { margin: 0 0 18px; }
+.gear .chips li { background: #ff8a1f; color: #fff; border: 2px solid var(--ink); }
+
+/* Bread Factory: a warm, golden bakery farm */
+.bread { background: linear-gradient(180deg, #fff3cf, #ffd98a); }
+.bread .head {
+  height: 250px; display: flex; align-items: center; justify-content: center; gap: 22px; border-bottom: 4px solid var(--ink);
+  background:
+    repeating-conic-gradient(from 0deg at 50% 50%, rgba(255,255,255,0.22) 0 7deg, transparent 7deg 20deg),
+    radial-gradient(circle at 50% 50%, #ffe27a 0, #ffb52e 55%, #f07c12 100%);
+}
+.bread .head img { width: 150px; border-radius: 34px; border: 4px solid var(--ink); box-shadow: 0 8px 0 var(--ink); }
+.bread .head .display { font-size: 50px; line-height: 0.95; -webkit-text-stroke-color: #5a2a08; text-shadow: 0 0.09em 0 #5a2a08; }
+.bread .body { padding: 26px 32px 34px; }
+.bread .tag { font-family: Lilita; font-size: 18px; color: #c45a0a; letter-spacing: 0.5px; margin: 0 0 14px; }
+.bread p { margin: 0 0 18px; color: #3a2410; }
+.bread .chips li { background: #4caf3a; color: #fff; border: 2px solid var(--ink); }
+
+/* Studio */
+.about { background: var(--navy); color: #dfe4ff; padding: 80px 0; }
+.about h2 { font-size: 54px; margin: 0 0 34px; text-align: center; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+.tile { background: linear-gradient(180deg, #2c3474, #232a60); border: 3px solid #0e1233; border-radius: 24px; padding: 26px 26px 28px; box-shadow: inset 0 3px 0 rgba(255,255,255,0.12), 0 6px 0 #0e1233; }
+.tile h3 { font-family: Lilita; font-weight: 400; font-size: 26px; color: var(--gold1); margin: 0 0 8px; }
+.tile p { margin: 0; font-size: 17px; }
+
+footer { background: #12163a; color: #9aa3d6; padding: 40px 0; font-size: 16px; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center; }
+footer nav a { color: #fff; margin-left: 22px; }
+
+@media (max-width: 980px) {
+  .pair { grid-template-columns: 1fr; }
+}
+@media (max-width: 860px) {
+  .navlinks { display: none; }
+  .brand .display { font-size: 30px; }
+  .hero { padding-bottom: 110px; }
+  .hero-grid, .antillery, .about-grid { grid-template-columns: 1fr; }
+  .hero-art { height: 330px; }
+  .hero-ant { width: 330px; }
+  .antillery .art { min-height: 220px; }
+  .antillery .body { padding: 26px 22px 30px; }
+  .antillery-shots { gap: 10px; margin: 40px 0 56px; }
+  .antillery-shots img { width: 30%; border-radius: 16px; border-width: 3px; }
+  .antillery-shots img:nth-child(n+4) { display: none; }
+  .gear .head, .bread .head { height: 200px; }
+  .bread .head img { width: 110px; border-radius: 26px; }
+  .bread .head .display { font-size: 38px; }
+  .gear .body, .bread .body { padding: 22px 20px 28px; }
+  .btn { font-size: 19px; padding: 10px 20px 12px; }
+  .about h2 { font-size: 40px; }
+  footer nav a { margin: 0 18px 0 0; }
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#"><span class="display">LIPENDIS</span><small>STUDIOS</small></a>
+      <div class="navlinks"><a href="#games">Games</a><a href="#studio">Studio</a><a href="#contact">Contact</a></div>
+    </nav>
+    <div class="hero-grid">
+      <div>
+        <h1 class="display">SMALL STUDIO.<br>BIG LITTLE<br>WORLDS.</h1>
+        <p class="lead">Lipendis Studios is an independent studio making bright, punchy mobile games: tower defense, match-3 puzzles and idle tycoons.</p>
+        <a class="btn" href="#games">SEE OUR GAMES</a>
+      </div>
+      <div class="hero-art"></div>
+    </div>
+  </div>
+  <img class="hero-ant" src="assets/img/antillery-soldier.webp" alt="The Soldier Ant from Antillery">
+  <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,70 C240,130 480,10 720,50 C960,90 1200,20 1440,60 L1440,120 L0,120 Z" fill="#fff6e6"/><path d="M0,70 C240,130 480,10 720,50 C960,90 1200,20 1440,60" fill="none" stroke="#1b1530" stroke-width="5"/></svg>
+</header>
+
+<main class="games" id="games">
+  <div class="wrap">
+    <div class="ribbon"><span>OUR GAMES</span></div>
+
+    <article class="card antillery">
+      <div class="art" role="img" aria-label="Antillery: ants defend the castle wall against a giant beetle"></div>
+      <div class="body">
+        <span class="badge">NEW</span>
+        <img class="logo" src="assets/img/antillery-logo.webp" alt="Antillery">
+        <p>Bugs are coming, and only your ants stand between them and the castle. Draft a new build every run, collect 13 ants, and fight through 100 stages across five arenas.</p>
+        <ul class="chips"><li>Tower defense</li><li>13 ants</li><li>100 stages</li><li>Endless mode</li></ul>
+        <div class="btns">
+          <span class="btn soon" aria-disabled="true">GOOGLE PLAY</span>
+          <span class="btn blue soon" aria-disabled="true">APP STORE</span>
+        </div>
+        <p style="margin:14px 0 0;font-family:Lilita;color:#d8323f;letter-spacing:1px">COMING SOON</p>
+      </div>
+    </article>
+    <div class="antillery-shots">
+      <img src="assets/img/antillery-shot1.webp" alt="Antillery: stop the swarm" loading="lazy">
+      <img src="assets/img/antillery-shot2.webp" alt="Antillery: upgrade every run" loading="lazy">
+      <img src="assets/img/antillery-shot3.webp" alt="Antillery: collect 13 ants" loading="lazy">
+      <img src="assets/img/antillery-shot4.webp" alt="Antillery: open epic nests" loading="lazy">
+      <img src="assets/img/antillery-shot5.webp" alt="Antillery: 100 stages, 5 arenas" loading="lazy">
+    </div>
+
+    <div class="pair">
+      <article class="card gear">
+        <div class="head" role="img" aria-label="Gear Crush logo"></div>
+        <div class="body">
+          <p class="tag">MATCH &amp; COLLECT</p>
+          <p>Every puzzle you solve brings a broken-down car back to life. Swap and crush colourful gears, earn parts, and restore a whole garage of cars, from everyday rides to rare exotics.</p>
+          <ul class="chips"><li>Match-3 puzzle</li><li>Car restoration</li></ul>
+          <div class="shots">
+            <img src="assets/img/gearcrush-shot1.webp" alt="Gear Crush: help the mechanic" loading="lazy">
+            <img src="assets/img/gearcrush-shot2.webp" alt="Gear Crush: fix cars" loading="lazy">
+            <img src="assets/img/gearcrush-shot3.webp" alt="Gear Crush: expand your garage" loading="lazy">
+          </div>
+          <div class="btns">
+            <a class="btn" href="https://play.google.com/store/apps/details?id=com.nextdio.gearcrush">GOOGLE PLAY</a>
+            <a class="btn white" href="https://apps.apple.com/app/id6758883865">APP STORE</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card bread">
+        <div class="head">
+          <img src="assets/img/breadfactory-icon.webp" alt="Bread Factory icon">
+          <span class="display">BREAD<br>FACTORY</span>
+        </div>
+        <div class="body">
+          <p class="tag">IDLE BAKERY</p>
+          <p>Plant wheat, fire up the oven and build the bakery empire of your dreams. Grow crops, unlock new recipes from rustic loaves to croissants and pizza, then hire chefs to run it all for you.</p>
+          <ul class="chips"><li>Idle tycoon</li><li>Farm to bakery</li></ul>
+          <div class="shots">
+            <img src="assets/img/breadfactory-shot1.webp" alt="Bread Factory: harvest them all" loading="lazy">
+            <img src="assets/img/breadfactory-shot2.webp" alt="Bread Factory: bake and sell" loading="lazy">
+            <img src="assets/img/breadfactory-shot3.webp" alt="Bread Factory: explore new lands" loading="lazy">
+          </div>
+          <div class="btns">
+            <a class="btn green" href="https://play.google.com/store/apps/details?id=com.nextdio.breadfactory">GOOGLE PLAY</a>
+            <a class="btn white" href="https://apps.apple.com/app/id6753078890">APP STORE</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</main>
+
+<section class="about" id="studio">
+  <div class="wrap">
+    <h2 class="display">THE STUDIO</h2>
+    <div class="about-grid">
+      <div class="tile"><h3>Made to pop</h3><p>Chunky art, big numbers and rewards that burst. Every tap should feel good.</p></div>
+      <div class="tile"><h3>Short sessions</h3><p>Games built for a bus ride or a coffee break, with depth for the players who stay.</p></div>
+      <div class="tile"><h3>Something for everyone</h3><p>Tower defense, match-3 puzzles and idle tycoons. Pick your kind of fun.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <span>© 2026 Lipendis Studios · <a href="mailto:LipendisCompany@gmail.com">LipendisCompany@gmail.com</a></span>
+    <nav><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+  </div>
+</footer>
+</body>
+</html>
